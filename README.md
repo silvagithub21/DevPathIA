@@ -11,7 +11,7 @@ DevPathIA é uma plataforma interativa e gamificada de aprendizado de programaç
 - **Interface Premium**: Design moderno com Dark Mode e Glassmorphism.
 - **Tutor de IA**: Auxílio inteligente para resolver desafios (em desenvolvimento).
 
-![Dashboard](Captura de tela 2026-05-03 112413)
+![Dashboard](public/Captura de tela 2026-05-03 112413.png)
 
 ## 🛠️ Tecnologias Utilizadas
 
