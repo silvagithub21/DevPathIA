@@ -1,0 +1,189 @@
+.achievements-page {
+  padding: var(--space-2xl);
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeIn var(--duration-normal) var(--ease-out);
+}
+
+.achievements-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3xl);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: var(--space-xl);
+}
+
+.achievements-header h1 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.achievements-summary {
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  animation: fadeInUp var(--duration-normal) var(--ease-out) both;
+}
+
+.summary-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.summary-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.summary-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-40);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--cyan);
+  font-family: var(--font-display);
+}
+
+.summary-progress {
+  width: 100%;
+}
+
+.progress-track {
+  height: 8px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  border-radius: var(--radius-full);
+  transition: width 1s var(--ease-out);
+}
+
+/* Grid */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-xl);
+}
+
+.achievement-card {
+  padding: var(--space-2xl);
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xl);
+  position: relative;
+  transition: all var(--duration-normal) var(--ease-out);
+  animation: fadeInUp var(--duration-normal) var(--ease-out) both;
+}
+
+.achievement-card:hover {
+  transform: translateY(-8px);
+  background: var(--surface-2);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.achievement-icon-wrap {
+  width: 100px;
+  height: 100px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ach-color);
+  position: relative;
+  transition: all var(--duration-normal);
+}
+
+.achievement-card.unlocked .achievement-icon-wrap {
+  border-color: var(--ach-color);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 20px rgba(var(--ach-color), 0.1);
+}
+
+.check-badge {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 24px;
+  height: 24px;
+  background: var(--green);
+  color: var(--bg-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--surface-1);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
+}
+
+.achievement-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-100);
+}
+
+.achievement-content p {
+  font-size: 0.9rem;
+  color: var(--text-60);
+  line-height: 1.6;
+}
+
+.achievement-card.locked {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+.achievement-card.locked:hover {
+  filter: grayscale(0.5);
+  opacity: 0.7;
+}
+
+.lock-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--text-40);
+  opacity: 0.4;
+}
+
+.achievement-card.unlocked .lock-overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  .achievements-header h1 {
+    font-size: 1.8rem;
+  }
+}

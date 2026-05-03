@@ -1,0 +1,236 @@
+/* ========================================
+   TrackCard — Component
+   ======================================== */
+
+.track-card {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--duration-normal) var(--ease-bounce),
+    border-color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out),
+    var(--duration-normal) var(--ease-out);
+  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+}
+
+/* Accent top border line */
+.track-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--card-accent);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+/* Hover glow effect */
+.track-card:hover:not(.locked)::before {
+  opacity: 1;
+}
+
+.track-card:hover:not(.locked) {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--card-glow);
+  background: var(--glass-bg-hover);
+}
+
+/* Locked state */
+.track-card.locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.track-card.locked:hover {
+  transform: none;
+}
+
+/* ---- Top Row ---- */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: var(--card-bg-tint);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.card-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.badge-level {
+  color: var(--card-accent);
+  background: var(--card-bg-tint);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.badge-locked {
+  color: var(--text-40);
+  font-size: 0.7rem;
+}
+
+/* ---- Body ---- */
+.card-body {
+  flex: 1;
+}
+
+.card-subtitle {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--card-accent);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-100);
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.track-card:hover:not(.locked) .card-title {
+  color: var(--card-accent);
+}
+
+.card-desc {
+  font-size: 0.8rem;
+  color: var(--text-60);
+  line-height: 1.55;
+  margin-bottom: var(--space-xl);
+}
+
+.card-quest-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--card-accent);
+}
+
+.quest-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.quest-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--text-40);
+  letter-spacing: 1px;
+}
+
+.quest-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-100);
+}
+
+/* ---- Footer ---- */
+.card-footer {
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Progress */
+.card-progress {
+  margin-bottom: var(--space-lg);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-60);
+  margin-bottom: var(--space-sm);
+  font-weight: 700;
+}
+
+.progress-track {
+  height: 6px;
+  background: var(--surface-2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--card-accent);
+  border-radius: var(--radius-full);
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+/* Action Button */
+.card-action-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: transparent;
+  color: var(--card-accent);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.track-card:hover:not(.locked) .card-action-btn {
+  background: var(--card-accent);
+  color: var(--bg-primary);
+  border-color: transparent;
+}
+
+.action-arrow {
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.track-card:hover:not(.locked) .action-arrow {
+  transform: translateX(4px);
+}
+
+/* Unlock hint */
+.unlock-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--text-40);
+}
+
+.unlock-icon {
+  font-size: 0.85rem;
+}
