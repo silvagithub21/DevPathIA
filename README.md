@@ -1,40 +1,38 @@
-# DevPathIA
+# 🚀 DevPathIA
 
-DevPathIA é uma plataforma interativa de aprendizado de programação e desenvolvimento de software, focada em trilhas de conhecimento e desafios práticos.
+DevPathIA é uma plataforma interativa e gamificada de aprendizado de programação, focada em trilhas de conhecimento e desafios práticos.
 
-## Tecnologias Utilizadas
+![Login Screen](./public/screenshots/login.png)
 
-- **React** com **Vite**
-- Componentização moderna (ex: `CardTrilha`, `TelaLogin`)
-- Desafios dinâmicos estruturados em JavaScript
+## ✨ Funcionalidades
 
-## Instalação e Execução
+- **Trilhas de Aprendizado**: Explore lógica, JavaScript, Python e SQL.
+- **Gamificação**: Ganhe XP, suba de nível e mantenha seu streak diário.
+- **Interface Premium**: Design moderno com Dark Mode e Glassmorphism.
+- **Tutor de IA**: Auxílio inteligente para resolver desafios (em desenvolvimento).
 
-Para rodar o projeto localmente:
+![Dashboard](./public/screenshots/dashboard.png)
+
+## 🛠️ Tecnologias Utilizadas
+
+- **React** + **Vite**
+- **Vanilla CSS** (Design System customizado)
+- **LocalStorage** para persistência de dados local
+
+## 🚀 Como Executar
 
 1. Clone o repositório:
    ```bash
    git clone https://github.com/silvagithub21/DevPathIA.git
    ```
-2. Entre na pasta do projeto:
-   ```bash
-   cd DevPath
-   ```
-3. Instale as dependências:
+2. Instale as dependências:
    ```bash
    npm install
    ```
-4. Inicie o servidor de desenvolvimento:
+3. Inicie o servidor:
    ```bash
    npm run dev
    ```
 
-## Estrutura do Projeto
-
-- `src/paginas/`: Telas principais da aplicação (ex: `TelaLogin.jsx`).
-- `src/componentes/`: Componentes reutilizáveis de interface (ex: `CardTrilha.jsx`).
-- `src/data/`: Dados estáticos e configurações (ex: `challenges.js`).
-
-## Contribuição
-
-Desenvolvido com o auxílio de Inteligência Artificial para acelerar e otimizar o fluxo de trabalho.
+---
+Desenvolvido com foco em UX e visual moderno.
