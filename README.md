@@ -2,8 +2,7 @@
 
 DevPathIA é uma plataforma interativa e gamificada de aprendizado de programação, focada em trilhas de conhecimento e desafios práticos.
 
-![Login Screen](./public/screenshots/login.png)
-
+![Screenshot do Projeto](https://github.com/silvagithub21/DevPathIA/blob/main/public/Captura%20de%20tela%202026-05-13%20142526.png)
 ## ✨ Funcionalidades
 
 - **Trilhas de Aprendizado**: Explore lógica, JavaScript, Python e SQL.
